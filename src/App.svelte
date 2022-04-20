@@ -22,12 +22,17 @@
 	const analytics = getAnalytics(app);
 
 	export let name;
+
+	const handleClick = () => {
+		console.log('submitted event to function')
+		gtag('event', 'click', {data: 'super important click data'})
+	}
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-	<button>click me</button>
+	<button on:click={handleClick}>click me</button>
 </main>
 
 <style>
