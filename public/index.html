@@ -55,7 +55,7 @@
         tracker.set('sendHitTask', function(model) {
           originalSendHitTask(model);
           const xhr = new XMLHttpRequest();
-          xhr.open('POST', '/localhits', true);
+          xhr.open('POST', 'https://us-central1-ga-server-test.cloudfunctions.net/helloWorld', true);
           xhr.send(model.get('hitPayload'));
         });
       });
