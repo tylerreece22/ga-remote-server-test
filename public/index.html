@@ -42,7 +42,10 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('create', 'G-LZYBQQWKBZ', 'auto');
+      gtag('config', 'G-LZYBQQWKBZ',{
+        'transport_url': 'https://us-central1-ga-server-test.cloudfunctions.net/helloWorld',
+        'first_party_collection': true,
+      });
 
       // https://developers.google.com/analytics/devguides/collection/analyticsjs/tasks#adding_to_a_task
       gtag(function(tracker) {
