@@ -57,6 +57,7 @@
           const xhr = new XMLHttpRequest();
           xhr.open('POST', 'https://us-central1-ga-server-test.cloudfunctions.net/helloWorld', true);
           xhr.send(model.get('hitPayload'));
+          console.log('event sent')
         });
       });
     </script>
