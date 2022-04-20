@@ -24,13 +24,12 @@
 	export let name;
 
 	const handleClick = () => {
-		console.log('submitted event to function')
+		const xhr = new XMLHttpRequest();
+		xhr.open('POST', 'https://us-central1-ga-server-test.cloudfunctions.net/helloWorld', true);
+		xhr.send(JSON.stringify({event: 'customEvent', data: {name: 'some important stuff'}}));	console.log('submitted event to function')
 		gtag('event', 'click', {data: 'super important click data'})
 	}
 
-	const xhr = new XMLHttpRequest();
-	xhr.open('POST', 'https://us-central1-ga-server-test.cloudfunctions.net/helloWorld', true);
-	xhr.send(JSON.stringify({event: 'pageView', data: {name: 'some important stuff'}}));
 </script>
 
 <main>
